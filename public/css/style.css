@@ -1,6 +1,8 @@
+/* Setting headers to red */
 h1{
     color: red;
 }
+/* Setting completed items to gray */
 .completed{
     color: gray;
     text-decoration: line-through;

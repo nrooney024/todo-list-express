@@ -18,26 +18,36 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- Making to-do list -->
     <h1>Todo List: </h1>
     <ul class="todoItems">
+        <!-- Pulling items for to-do list -->
     <% for(let i=0; i < items.length; i++) {%>
         <li class="item">
+            <!-- Gathering completed items -->
             <% if(items[i].completed === true) {%>
                 <span class='completed'><%= items[i].thing %></span>
             <% }else{ %>
                 <span><%= items[i].thing %></span>
             <% } %>    
+            <!-- Setting the trash can to delete items -->
             <span class='fa fa-trash'></span>
         </li>
     <% } %>
     </ul>
 
+    <!-- Adding what's left on the to-do list -->
     <h2>Left to do: <%= left %></h2>
 
+    <!-- Add a to-do item -->
     <h2>Add A Todo:</h2>
 
+    <!-- Making a form to make a post request to add a to-do item. 
+        It sends this to the server that's waiting for the /addto request -->
     <form action="/addTodo" method="POST">
+        <!-- This gathers what the to-do item is to send for the post request -->
         <input type="text" placeholder="Thing To Do" name="todoItem">
+        <!-- The submit button triggers this post request -->
         <input type="submit">
     </form>
     
